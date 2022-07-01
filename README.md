@@ -1,3 +1,5 @@
+![CClogo](./docs/images/commoncorelogo.png)
+
 # Common Core
 
 ## About
