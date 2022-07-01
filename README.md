@@ -1,4 +1,3 @@
-![CClogo](./docs/images/commoncorelogo.png)
 <img src="./docs/images/commoncorelogo.png" width="100">
 
 # Common Core
