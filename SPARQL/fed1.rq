@@ -8,30 +8,25 @@ PREFIX schemaold: <http://schema.org/>
 PREFIX bds: <http://www.bigdata.com/rdf/search#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-SELECT DISTINCT ?name ?hname ?url ?hurl ?s  ?type ?score  ?lit ?description ?hdecription
-WHERE
-{
-    SERVICE <https://ts.collaborium.io/blazegraph/namespace/development/sparql> {
-   ?lit bds:search "coral" .
-   ?lit bds:matchAllTerms "false" .
-   ?lit bds:relevance ?score .
-   ?lit bds:minRelevance "0.30" .
-   graph ?g {
-    ?s ?p ?lit .
-    FILTER isIRI(?s)
-    ?s rdf:type ?type .
-    OPTIONAL { ?s schema:name ?name .   }
-    OPTIONAL { ?s schema:url ?url .   }
-    OPTIONAL { ?s schema:description ?description .    }
+SELECT DISTINCT ?name ?hname ?url ?hurl ?s ?type ?score ?lit ?description ?hdecription WHERE {
+  SERVICE <https://ts.collaborium.io/blazegraph/namespace/development/sparql> {
+    ?lit bds:search "coral";
+      bds:matchAllTerms "false";
+      bds:relevance ?score;
+      bds:minRelevance "0.30".
+    GRAPH ?g {
+      ?s ?p ?lit.
+      FILTER(ISIRI(?s))
+      ?s rdf:type ?type.
+      OPTIONAL { ?s schema:name ?name. }
+      OPTIONAL { ?s schema:url ?url. }
+      OPTIONAL { ?s schema:description ?description. }
+    }
+  }
+  SERVICE <https://graph.ufokn.org/repositories/hydroshare> {
+    ?hs schema:name ?hname;
+      schema:url ?hurl;
+      schema:description ?hdescription.
   }
 }
-     SERVICE <https://graph.ufokn.org/repositories/hydroshare> {
-
-	?hs schema:name ?hname .
-?hs schema:url ?hurl .
-?hs schema:description ?hdescription .
-
-}
-}
 LIMIT 30
-

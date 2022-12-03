@@ -1,0 +1,39 @@
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX con: <http://www.ontotext.com/connectors/lucene#>
+PREFIX luc: <http://www.ontotext.com/owlim/lucene#>
+PREFIX con-inst: <http://www.ontotext.com/connectors/lucene/instance#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <https://schema.org/>
+PREFIX schemaold: <http://schema.org/>
+PREFIX bds: <http://www.bigdata.com/rdf/search#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT DISTINCT ?s ?name  ?url ?hs ?hname ?hurl ?g  ?type ?score
+WHERE {
+          {
+          SERVICE <https://ts.collaborium.io/blazegraph/namespace/development/sparql> {
+          ?lit bds:search "florida spiny lobster farming";
+            bds:matchAllTerms "true";
+            bds:relevance ?score;
+            bds:minRelevance "0.30".
+          GRAPH ?g {
+            ?s ?p ?lit.
+            FILTER(ISIRI(?s))
+            ?s rdf:type ?type.
+            ?s schema:name ?name.
+            ?s schema:url ?url.
+            ?s schema:description ?description.
+          }
+        }
+      }
+      UNION
+      {
+          SERVICE <https://graph.ufokn.org/repositories/hydroshare> {
+            ?hs schema:name ?hname;
+              schema:url ?hurl;
+              schema:description ?hdescription.
+          }
+        }
+     }
+LIMIT 30
+
