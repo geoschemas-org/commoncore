@@ -24,12 +24,12 @@ WHERE
     OPTIONAL { ?s schema:url ?url .   }
     OPTIONAL { ?s schema:description ?description .    }
   }
-   ?sp prov:generated ?g  .
-   ?sp prov:used ?used .
-   ?used prov:hadMember ?hm .
-   ?hm prov:wasAttributedTo ?wat .
-   ?wat rdf:name ?orgname .
-   ?wat rdfs:seeAlso ?domain
+#   ?sp prov:generated ?g  .
+#   ?sp prov:used ?used .
+#   ?used prov:hadMember ?hm .
+#   ?hm prov:wasAttributedTo ?wat .
+#   ?wat rdf:name ?orgname .
+#   ?wat rdfs:seeAlso ?domain
 }
 ORDER BY DESC(?score)  ?name
 LIMIT 30

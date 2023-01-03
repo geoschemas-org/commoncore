@@ -1,0 +1,42 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "id": "MY_ITEM_ID",
+        "properties": {
+          "stac_version": "1.0.0-beta.2",
+          "stac_extensions": ["eo"],
+          "datetime": "2022-01-01T00:00:00Z",
+          "provider": "MY_PROVIDER",
+          "eo:bands": [
+            {
+              "name": "red",
+              "common_name": "red"
+            },
+            {
+              "name": "green",
+              "common_name": "green"
+            },
+            {
+              "name": "blue",
+              "common_name": "blue"
+            }
+          ]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [102.0, 2.0],
+              [103.0, 2.0],
+              [103.0, 3.0],
+              [102.0, 3.0],
+              [102.0, 2.0]
+            ]
+          ]
+        }
+      }
+    ]
+  }
+  
