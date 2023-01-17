@@ -1,70 +1,55 @@
-# What is _Common Core_
+# Pattern Asset Catalogue (PAC)
 
-Common Core (CC) is a collaborative effort between the involved parties to 
-express  alignment approaches for their respective Knowledge Graphs.  It is not
-intended this be the only or even the most capable approach to such alignment, 
-it most surely will not be. 
+## TLDR
 
-Additionally, it should be noted that alignment can be both a technical and social 
-thing.  Elements of this work will touch on both.  
+* Create SHACL shapes
+* generate schema.org to describe these shapes, and the principles and associated
+SPARQL with them (things outside what the SHACL describes)
+* harvest these SHACL and schema.org files into a KG
+* use that to find the principles, associated vocabularies and shapes and queries
+* perform or build queries and data integration
 
-In the above context then, CC is a mechanism to seek alignment between involved parties
-to enable better use of the resources from the represented communities across
-a wide surface of users.   
+![shic.svg](../docs/images/pac.svg)
 
-Technical alignment exist at many layers.
+## About
 
+The Shape Asset Catalog (ShAC) is a thought experiment inspired by the 
+OGC [STAC specification](https://github.com/radiantearth/stac-spec).   The goal 
+is to generate a simple schema.org based document that can:
 
-## SPARQL 1.1 Federates Search via Service?
+* Describe a SHACL file
+    * Point to where the SHACL file this
+    * Point to a record that can be validated with the SHACL Profile
+    * describe a command using something like pySHACL to do that validation
 
-However, while it is true this approach should allow SPARQL queries to be formed that 
-can be federated via SERVICE, see [https://www.w3.org/TR/sparql11-federated-query/](https://www.w3.org/TR/sparql11-federated-query/)
-for details, this is not the primary goal.  
+* The shapes relation to FAIR principles
+    * [FAIR Implementation Profile](https://peta-pico.github.io/FAIR-nanopubs/fip/index-en.html)
+    * [FAIR vocabulary](https://peta-pico.github.io/FAIR-nanopubs/principles/index-en.html)
 
-Additional approaches would include being able to form SPARQL CONSTRUCT calls to form new 
-triples or leveraging approach to subset or frame out data from a parent graph into 
-a useful subset of triples for specific communities or use cases.  
+* Example SPARQL based on the shape as a potential action
+    * A document of that SPARQL
+    * an endpoint with the SPARQL encoded in a GET call
+    * describe the returns SELECTS of the SPARQL
 
-Rather, the goal here is not to promote any given approach to use the graphs that validate 
-to this common core shape, but simply ensure that whatever approach is developed works against the
-shared graph shapes.
+* Describe the vocabularies used in the SHACL / SPARQL
+* Describe the properties used? (why, just grab the SHACL and SPARQL query for those?)
+* Describe the types it checks? (why, just grab the SHACL and SPARQL query for those?)
 
-## Initial approach
+Given this SHAC catalog, it would be easy to collect these and form a KG of them.
 
-* Generate SHACL shapes for the various SPARQL queries used by groups involved in this work
-* Provide approaches for the application of these SHACL shapes in the triplestore or via tools like pySHACL
-* Provide approaches for generating, sharing and reviewing the results of these validation processes
+Current thoughts on this are included in the two images below. 
+An example implementation in JSON-LD can be found in the 
+[shac.json](/graph/shac.json) file.  
 
+### Image 1
 
+Draft idea on leveraging schema.org to describe a ShAC document.
 
-## Representation
-
-JSON-LD and HTTP along with robots.txt, sitemaps and sitegraphs
-
-Most of these above items can be seen as simple applications of web architecture approaches.
-
-
-## Vocabulary
-
-schema.org, geosparql, DCAT, other?   
-
-It may be possible to leverage VOID, schema.org or Hydra to represent the vocabularies used.
-However, since the SHACL shapes will validate against the use of vocabularies explicitly this may
-really not be needed.   Rather it might be easy to "grep" the shapes for the range of vocabularies used. 
-
-## Activity representation
-
-PROV
+![schemaFAIR.svg](../docs/images/schemaFAIR.svg)
 
 
-## Query representation
+### Image 2
 
-SPARQL
+Same as above but based on a reference JSON-LD document formed from the above. 
 
-## Validation 
-
-SHACL
-
-## Relationship to FAIR (or CARE?)
-
-TBD
+![shac.png](../docs/images/shac.png)

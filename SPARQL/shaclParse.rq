@@ -1,0 +1,9 @@
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+prefix schema: <http://schema.org/>
+
+SELECT DISTINCT ?o
+WHERE {
+      ?s sh:path ?o
+        
+}
+

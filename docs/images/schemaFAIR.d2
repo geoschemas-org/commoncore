@@ -1,0 +1,35 @@
+WebAPI -> Docs: documentation
+
+Docs -> PP: publishingPrinciples
+
+Docs: { 
+    about: |md CreativeWork 
+    
+    docs for the API |
+}
+
+PP: {
+    about: |md CreativeWork
+
+    links to FAIR principles
+    |
+}
+
+PP -> FAIR_URIs: via nanopub links
+
+WebAPI -> OfferCatalog: hasOfferCatalog
+WebAPI -> Offer: offers
+# OfferCatalog -> Offer: itemListElement
+
+WebAPI -> Organization: provider
+WebAPI -> Thing: serviceOutput
+Thing: {
+about: |md what is generated|
+}
+WebAPI -> Action: potentialAction
+
+Action -> ActionThing: object
+Action -> EntryPoint: target
+Action -> ActionThing2: result
+
+WebAPI -> DigitalDocument: subjectOf

@@ -9,7 +9,7 @@ PREFIX bds: <http://www.bigdata.com/rdf/search#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
 SELECT DISTINCT ?name ?hname ?url ?hurl ?s ?type ?score ?lit ?description ?hdecription WHERE {
-  SERVICE <https://ts.collaborium.io/blazegraph/namespace/development/sparql> {
+  SERVICE <http://graph.oceaninfohub.org/blazegraph/namespace/oih/sparql> {
     ?lit bds:search "coral";
       bds:matchAllTerms "false";
       bds:relevance ?score;

@@ -11,7 +11,7 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 SELECT DISTINCT ?s ?name  ?url ?hs ?hname ?hurl ?g  ?type ?score
 WHERE {
           {
-          SERVICE <https://ts.collaborium.io/blazegraph/namespace/development/sparql> {
+          SERVICE <http://graph.oceaninfohub.org/blazegraph/namespace/oih/sparql> {
           ?lit bds:search "florida spiny lobster farming";
             bds:matchAllTerms "true";
             bds:relevance ?score;
