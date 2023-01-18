@@ -1,0 +1,92 @@
+{
+  "@context": "http://schema.org",
+  "@type": "WebAPI",
+  "name": "My API",
+  "description": "A description of my API",
+  "url": "http://example.com/api",
+  "documentation": {
+    "@type": "CreativeWork",
+    "url": "http://example.com/api/docs",
+    "publishingPrinciples": [
+      {
+        "@type": "CreativeWork",
+        "@id": "https://w3id.org/fair/principles/latest/A1.1",
+        "url": "https://w3id.org/fair/principles/latest/A1.1",
+        "name": "Ocean Observations Physics and Climate Panel (OOPC) Sea State GOOS EOV Specification Sheet",
+        "description": "This is the EOV specification sheet released by GOOS for Sea State.  It was composed by the Ocean Observations Panel for Climate.  OOPC is sponsored by the Global Ocean Observing System the Global Climate Observing System and the World Climate Research Program. OOPC provides advice on scientific requirements to the Joint Commission for Oceanography and Marine Meteorology. "
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": "https://w3id.org/fair/principles/latest/F1",
+        "url": "https://w3id.org/fair/principles/latest/F1",
+        "name": "Ocean Observations Physics and Climate Panel (OOPC) Ocean Surface Stress GOOS EOV Specification Sheet",
+        "description": "This is the EOV specification sheet released by GOOS for Ocean Surface Stress.  It was composed by the Ocean Observations Panel for Climate.  OOPC is sponsored by the Global Ocean Observing System the Global Climate Observing System and the World Climate Research Program. OOPC provides advice on scientific requirements to the Joint Commission for Oceanography and Marine Meteorology. "
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": "https://w3id.org/fair/principles/latest/R1.1",
+        "url": "https://w3id.org/fair/principles/latest/R1.1",
+        "name": "QA/QC guidance",
+        "description": "QA/QC  - EOV data and the methods used to generate them should have been vetted through some QA/QC methods, ideally performed by an independent third-party. These should be included in a dedicated JSON-LD block, even if it points to the same methodology linked to in the measurementTechnique block. "
+      }
+    ]
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "My Organization",
+    "url": "http://example.com"
+  },
+  "potentialAction": {
+    "@type": "Action",
+    "name": "Use My API",
+    "description": "Use the API to retrieve data from my organization.",
+    "@id": "https://us-central1-top-operand-112611.cloudfunctions.net/function-1",
+    "result": {
+      "@type": "DataDownload",
+      "encodingFormat": "text/plain",
+      "description": "a simple text result for the RGB counts"
+    },
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://us-central1-top-operand-112611.cloudfunctions.net/function-1",
+      "httpMethod": "POST",
+      "contentType": [
+        "image/jpeg",
+        "image/png"
+      ]
+    },
+    "object": {
+      "@type": "ImageObject",
+      "description": "A JPEG or PNG to analyze the RGB counts"
+    }
+  },
+  "subjectOf": {
+    "@type": "DigitalDocument",
+    "name": "Service Validation Document",
+    "description": "A document used to validate the services provided by my organization.",
+    "url": "http://example.com/service-validation-document",
+    "encodingFormat": "application/pdf",
+    "inLanguage": "en",
+    "dateCreated": "2022-01-01",
+    "author": {
+      "@type": "Person",
+      "name": "John Smith"
+    }
+  },
+  "offers": [
+    {
+      "@type": "Offer",
+      "additionalType": "https://example.org/id/foraterm",
+      "name": "Schema.org",
+      "identifier": "https://scheme.org/",
+      "url": "https://schema.org"
+    },
+    {
+      "@type": "Offer",
+      "additionalType": "https://example.org/id/foraterm",
+      "name": "Schema.org",
+      "identifier": "https://scheme.org/",
+      "url": "https://schema.org"
+    }
+  ]
+}

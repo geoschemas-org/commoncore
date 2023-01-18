@@ -39,7 +39,7 @@ Given this SHAC catalog, it would be easy to collect these and form a KG of them
 
 Current thoughts on this are included in the two images below. 
 An example implementation in JSON-LD can be found in the 
-[shac.json](/graph/shac.json) file.  
+[pac.json](/pacGraphs/pac.json) file.
 
 ### Image 1
 
@@ -52,4 +52,4 @@ Draft idea on leveraging schema.org to describe a ShAC document.
 
 Same as above but based on a reference JSON-LD document formed from the above. 
 
-![shac.png](../docs/images/shac.png)
+![shac.png](../docs/images/pacCrack.png)

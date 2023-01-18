@@ -1,7 +1,15 @@
 <img src="./docs/images/commoncorelogo.png" width="100">
 
-# Pattern Asset Catalog (PAC)
+# Common Core
 
+The Common Core repo is a collaborative effort to describe and catalogue elements of a linked data
+approach that facilitate FAIR data principles.   At present this is an effort between Ocean InfoHub,
+POLDER and the NSF DeCODER projects.
+
+The first product being explored is the idea of a catologue of patterns supporting interoperability.
+This has the name, Pattern Asset Catalogue (PAC).
+
+# Pattern Asset Catalogue (PAC)
 
 ## PAC is
 
@@ -11,13 +19,15 @@ A simple JSON-LD (ie RDF) profile to describe a data graph that:
 * related queries (SPARQL)
 * related services associated with the above
 * related JSON-LD frames
+* potential JSON schema files
+* example data graphs
 * connects the above to resolvable and established references of associated goals and patterns
 
 The reason?
 
-It is proposed that SHACL and some associated technology like framing
-can help express some aspects of FAIR principles to this sector. This is an
-exploration of that idea.
+SHACL, frames and other elements express the structure of a graph.  Additionaly they
+can connect these assets to aspects of FAIR principles or other related principes.  This
+can aid in the discovery and description of the intended goals of these assets.
 
 
 ## PAC is NOT
@@ -28,7 +38,8 @@ interoperability benefits that ontology and semantic integration based on ontolo
 PAC is also NOT a new concept.  It is a influenced by. and attempts to borrow (steal) from, things such as
 OGC STAC but also could be compared to things such as SQL global as view / local as view concepts.
 
-Additionally, there are other projects such as WSMO  (https://www.w3.org/Submission/WSMO-primer/).
+Additionally, there are other projects such as WSMO  (https://www.w3.org/Submission/WSMO-primer/) that have
+the potential to address these goals in a more enterprise approach.
 
 ## Worth a 1000 words
 
@@ -36,7 +47,7 @@ Additionally, there are other projects such as WSMO  (https://www.w3.org/Submiss
 
 ##  Why not just?
 
-### SPARQL in SHACL
+### Use SPARQL in SHACL
 
 While SHACL AF does allow some use of SPARQL including SELECT and ASK, this is a not more complex as the non-RDF
 SPARQL is mapped into the SHACL.  Also, complex SPARQL seems like it would be at least annoying to do in this approach.
@@ -50,7 +61,7 @@ integrate all this information into one file.   Why have two files holding the i
 the simplicity of the abstraction as this concept is judged for value.  Blending the two files together
 in some ways burdens the proven SHACL work with the ShaC hypothesis.
 
-### SPARQL 1.1 Federates Search via Service?
+### Just use SPARQL 1.1 Federates Search via Service?
 
 However, while it is true this approach should allow SPARQL queries to be formed that 
 can be federated via SERVICE, see [https://www.w3.org/TR/sparql11-federated-query/](https://www.w3.org/TR/sparql11-federated-query/)
