@@ -53,6 +53,11 @@ While SHACL AF does allow some use of SPARQL including SELECT and ASK, this is a
 SPARQL is mapped into the SHACL.  Also, complex SPARQL seems like it would be at least annoying to do in this approach.
 For now the model of connecting the SPARQL as an external creative work or other type is proposed.
 
+### Just use DCAT
+
+DCAT can describe catalogs and does contain a [Data Service](https://www.w3.org/TR/vocab-dcat-2/#Class:Data_Service)
+node.  However, they focused more on the use of services to access data.  So connections to validation or framing
+or other apps might become a bit forced.  It would be worth exploring though.
 
 ### Put it all in one graph file
 
