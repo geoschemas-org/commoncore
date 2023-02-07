@@ -1,5 +1,5 @@
 {
-  "@context": "http://schema.org",
+  "@context": "https://schema.org/",
   "@type": "WebAPI",
   "name": "My API",
   "description": "A description of my API",

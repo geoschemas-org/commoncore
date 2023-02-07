@@ -3,7 +3,6 @@ prefix schema: <http://schema.org/>
 
 SELECT DISTINCT ?o
 WHERE {
-      ?s sh:path ?o
-        
+      ?s sh:path ?o      
 }
 

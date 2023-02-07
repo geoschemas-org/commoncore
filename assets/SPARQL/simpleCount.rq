@@ -1,0 +1,5 @@
+SELECT (COUNT(DISTINCT ?s) AS ?count)
+WHERE {{
+    ?s ?p ?o
+  }
+}
