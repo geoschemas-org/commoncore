@@ -29,6 +29,7 @@ SHACL, frames and other elements express the structure of a graph.  Additionaly 
 can connect these assets to aspects of FAIR principles or other related principes.  This
 can aid in the discovery and description of the intended goals of these assets.
 
+![shic.svg](./docs/images/probstatemnt.svg)
 
 ## PAC is NOT
 
