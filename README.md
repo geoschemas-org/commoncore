@@ -19,6 +19,7 @@ A simple JSON-LD (ie RDF) profile to describe a data graph that:
 * related queries (SPARQL)
 * related services associated with the above
 * related JSON-LD frames
+* related release Graphs (link to example for OIH and others)
 * potential JSON schema files
 * example data graphs
 * connects the above to resolvable and established references of associated goals and patterns
