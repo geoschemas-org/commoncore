@@ -17,6 +17,7 @@ A simple JSON-LD (ie RDF) profile to describe a data graph that:
 
 * Provides metadata about a SHACL shape (itself an RDF graph)
 * related queries (SPARQL)
+* Also related to the SPARQL endpoints as services that can do query or update, etc
 * related services associated with the above
 * related JSON-LD frames
 * related release Graphs (link to example for OIH and others)

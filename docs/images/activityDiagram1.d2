@@ -1,0 +1,65 @@
+direction:right
+
+ititle: |md
+  # Integration Activity Flow
+  | { near: top-center  }
+
+cop1: Community 1 \n (Reference Community) {
+     width: 300
+    project.style.fill: honeydew
+    data.style.fill: honeydew
+    person.style.fill: honeydew
+}
+
+cop2: Community 2 {
+     width: 300
+    project.style.fill: honeydew
+    data.style.fill: honeydew
+    person.style.fill: honeydew
+}
+
+
+ci: Org + Project Steering Committee \n(Automated Testing and Products) {
+
+
+
+    core: Validators {
+              shape_proj {
+              width:200
+              }
+        shape_data {
+              width:200
+              }
+        shape_person {
+              width:200
+              }
+    }
+
+    frames: Frames {
+                proj {
+                width:200
+                }
+    }
+    explanation: |md
+          # Generated Patterns
+            - Built from the valid patterns of the community
+            - Basis for new groups to fork and make Community X
+            - Use the "expects" checking style
+              |
+
+    patterns: Generatd Core Patterns {
+        project.style.fill: honeydew
+        data.style.fill: honeydew
+        person.style.fill: honeydew
+
+
+    }
+}
+
+cop1.project -> ci.core.shape_proj: validated against
+cop2.project -> ci.core.shape_proj: validated against
+
+cop1.project -> ci.frames.proj
+cop2.project -> ci.frames.proj
+ci.frames.proj -> ci.patterns.project
+
